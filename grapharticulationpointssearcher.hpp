@@ -16,14 +16,14 @@
     Complexity: O(|E| + |V|)
 */
 template<typename VertexNumsContainer, typename EdgesContainer>
-class ArticulationPointsSearcher
+class ArticulationAndBridgesPointsSearcher
 {
 public:
     enum EdgeTypes {NoEdge = -1, Tree, Back, Direct, Cross};
-    ArticulationPointsSearcher(UndirectedGraph& graph, VertexNumsContainer& vncont, EdgesContainer& edgesCont);
+    ArticulationAndBridgesPointsSearcher(UndirectedGraph& graph, VertexNumsContainer& vncont, EdgesContainer& edgesCont);
 protected:
     void visit(UndirectedGraph& graph, Vertex::Number vNum);
-    void findArticulationPoints(UndirectedGraph& graph, VertexNumsContainer& vncont, EdgesContainer& edgesCont);
+    void findArticulationPointsAndBridges(UndirectedGraph& graph, VertexNumsContainer& vncont, EdgesContainer& edgesCont);
     const Vertex::AttributeId ColorAttributeId;
     const Vertex::AttributeId ParentAttributeId;
     const Vertex::AttributeId DistanceAttributeId;
@@ -36,7 +36,8 @@ protected:
 };
 
 template<typename VertexNumsContainer, typename EdgesContainer>
-ArticulationPointsSearcher<VertexNumsContainer, EdgesContainer>::ArticulationPointsSearcher(UndirectedGraph& graph, VertexNumsContainer& vncont, EdgesContainer& edgesCont)
+ArticulationAndBridgesPointsSearcher<VertexNumsContainer, EdgesContainer>::
+ArticulationAndBridgesPointsSearcher(UndirectedGraph& graph, VertexNumsContainer& vncont, EdgesContainer& edgesCont)
     : ColorAttributeId{graph.registerVertexAttributeIfNotRegistered("color")},
       ParentAttributeId{graph.registerVertexAttributeIfNotRegistered("parent")},
       DistanceAttributeId{graph.registerVertexAttributeIfNotRegistered("distance")},
@@ -63,7 +64,7 @@ ArticulationPointsSearcher<VertexNumsContainer, EdgesContainer>::ArticulationPoi
             visit(graph, i);
         }
     }
-    findArticulationPoints(graph, vncont, edgesCont);
+    findArticulationPointsAndBridges(graph, vncont, edgesCont);
 }
 
 /*
@@ -77,7 +78,7 @@ ArticulationPointsSearcher<VertexNumsContainer, EdgesContainer>::ArticulationPoi
     }
 */
 template<typename VertexNumsContainer, typename EdgesContainer>
-void ArticulationPointsSearcher<VertexNumsContainer, EdgesContainer>::visit(UndirectedGraph& graph, Vertex::Number vNum)
+void ArticulationAndBridgesPointsSearcher<VertexNumsContainer, EdgesContainer>::visit(UndirectedGraph& graph, Vertex::Number vNum)
 {
      std::stack<Vertex::Number> unvisitedVertexNums;
      unvisitedVertexNums.push(vNum);
@@ -150,7 +151,8 @@ void ArticulationPointsSearcher<VertexNumsContainer, EdgesContainer>::visit(Undi
 }
 
 template<typename VertexNumsContainer, typename EdgesContainer>
-void ArticulationPointsSearcher<VertexNumsContainer, EdgesContainer>::findArticulationPoints(UndirectedGraph& graph, VertexNumsContainer& vncont, EdgesContainer& edgesCont)
+void ArticulationAndBridgesPointsSearcher<VertexNumsContainer, EdgesContainer>::
+    findArticulationPointsAndBridges(UndirectedGraph& graph, VertexNumsContainer& vncont, EdgesContainer& edgesCont)
 {
     // start vertex was 0 vertex of graph
     enum {StartVertexNumber = 0};
