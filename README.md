@@ -23,7 +23,7 @@ Small object-oriented library for graphs and some useful algorithms.
 </ul>
 
 <h3>Work example</h3>
-<code>
+'''c++
     #include "graphs.hpp"
     UndirectedGraph ug(9, UndirectedGraph::Interfaces::AdjacencyMatrix);
     ug.addEdgeBetween(0,1);
@@ -56,4 +56,4 @@ Small object-oriented library for graphs and some useful algorithms.
     ug.getEdgeByVertices(6,8).setAttribute(WeightAttrId, 6);
     ug.getEdgeByVertices(7,8).setAttribute(WeightAttrId, 7);
     UndirectedGraph spanningTree = minimalSpanningTreeKruskal(ug);
- </code>
+'''
