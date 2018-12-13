@@ -565,7 +565,6 @@ UndirectedGraph minimalSpanningTreeKruskal(UndirectedGraph& graph)
    Complexity: O(|E|lg|V|) ?
     (because sum of adj vertices for all vertices = e, and operations on set are lg|V|)
     WARNING: can we use vEB tree or fibonacci heaps?
-    WARNING: DON'T TOUCH THIS HUGGING SHEET SUKA BLYAT!
 */
 UndirectedGraph minimalSpanningTreePrim(UndirectedGraph& graph, Vertex::Number v)
 {

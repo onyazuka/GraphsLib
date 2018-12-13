@@ -859,7 +859,8 @@ TEST(ArticulationPointsTest, GraphAlgorithmsTest)
     ugsm.addEdgeBetween(3,5);
     Graph::VertexNumbers vnsm;
     std::vector<Edge> bridges;
-    ArticulationPointsSearcher<Graph::VertexNumbers, std::vector<Edge>>(ugsm, vnsm, bridges);
+    ArticulationAndBridgesPointsSearcher<Graph::VertexNumbers, std::vector<Edge>>(ugsm, vnsm, bridges);
+    EXPECT_EQ(bridges.size(), 0);
 
     Graph::VertexNumbers expectedRes{2};
     EXPECT_EQ(vnsm, expectedRes);
@@ -900,7 +901,7 @@ TEST(ArticulationPointsTest, GraphAlgorithmsTest)
 
     Graph::VertexNumbers vn;
     std::vector<Edge> bridges2;
-    ArticulationPointsSearcher<Graph::VertexNumbers, std::vector<Edge>>{ug, vn, bridges2};
+    ArticulationAndBridgesPointsSearcher<Graph::VertexNumbers, std::vector<Edge>>{ug, vn, bridges2};
 
     Graph::VertexNumbers expectedRes2{1,4,8,10,12,14,17,19};
     EXPECT_EQ(vn, expectedRes2);
@@ -917,10 +918,11 @@ TEST(ArticulationPointsTest, GraphAlgorithmsTest)
     ugsm1.addEdgeBetween(3,5);
     Graph::VertexNumbers vnsm1;
     std::vector<Edge> bridges3;
-    ArticulationPointsSearcher<Graph::VertexNumbers, std::vector<Edge>>(ugsm1, vnsm1, bridges3);
+    ArticulationAndBridgesPointsSearcher<Graph::VertexNumbers, std::vector<Edge>>(ugsm1, vnsm1, bridges3);
 
     Graph::VertexNumbers expectedRes3{0};
     EXPECT_EQ(vnsm1, expectedRes3);
+    EXPECT_EQ(bridges3.size(), 0);
 
 }
 
