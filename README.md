@@ -22,6 +22,14 @@ Small object-oriented library for graphs and some useful algorithms.
   <li>Maximum flow problem: Ford-Fulkerson</li>
 </ul>
 
+<h3>Complexities</h3>
+θ(V+E) - BFS, DFS, Topological Sort, Articulation points, Bridges, Cycle detection, Components, Euler, 
+  directed acyclic graph shortest path
+θ(ElgV) - Kruskal, Prim, Dijkstra
+θ(EV) - Bellman-Ford
+θ(V^3) - Floyd-Warshall
+θ(E^2 V) - Ford-Fulkerson
+
 <h3>Features</h3>
 <ul>
   <li>Adjacency lists or adjacency matrix</li>
