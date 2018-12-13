@@ -22,38 +22,15 @@ Small object-oriented library for graphs and some useful algorithms.
   <li>Maximum flow problem: Ford-Fulkerson</li>
 </ul>
 
-<h3>Work example</h3>
-'''c++
-    #include "graphs.hpp"
-    UndirectedGraph ug(9, UndirectedGraph::Interfaces::AdjacencyMatrix);
-    ug.addEdgeBetween(0,1);
-    ug.addEdgeBetween(0,7);
-    ug.addEdgeBetween(1,7);
-    ug.addEdgeBetween(1,2);
-    ug.addEdgeBetween(2,3);
-    ug.addEdgeBetween(2,8);
-    ug.addEdgeBetween(2,5);
-    ug.addEdgeBetween(3,4);
-    ug.addEdgeBetween(3,5);
-    ug.addEdgeBetween(4,5);
-    ug.addEdgeBetween(5,6);
-    ug.addEdgeBetween(6,7);
-    ug.addEdgeBetween(6,8);
-    ug.addEdgeBetween(7,8);
-    const Edge::AttributeId WeightAttrId = ug.addEdgeAttribute("weight");
-    ug.getEdgeByVertices(0,1).setAttribute(WeightAttrId, 4);
-    ug.getEdgeByVertices(0,7).setAttribute(WeightAttrId, 8);
-    ug.getEdgeByVertices(1,7).setAttribute(WeightAttrId, 11);
-    ug.getEdgeByVertices(1,2).setAttribute(WeightAttrId, 8);
-    ug.getEdgeByVertices(2,3).setAttribute(WeightAttrId, 7);
-    ug.getEdgeByVertices(2,8).setAttribute(WeightAttrId, 2);
-    ug.getEdgeByVertices(2,5).setAttribute(WeightAttrId, 4);
-    ug.getEdgeByVertices(3,4).setAttribute(WeightAttrId, 9);
-    ug.getEdgeByVertices(3,5).setAttribute(WeightAttrId, 14);
-    ug.getEdgeByVertices(4,5).setAttribute(WeightAttrId, 10);
-    ug.getEdgeByVertices(5,6).setAttribute(WeightAttrId, 2);
-    ug.getEdgeByVertices(6,7).setAttribute(WeightAttrId, 1);
-    ug.getEdgeByVertices(6,8).setAttribute(WeightAttrId, 6);
-    ug.getEdgeByVertices(7,8).setAttribute(WeightAttrId, 7);
-    UndirectedGraph spanningTree = minimalSpanningTreeKruskal(ug);
-'''
+<h3>Features</h3>
+<ul>
+  <li>Adjacency lists or adjacency matrix</li>
+  <li>Undirected and directed graphs</li>
+  <li>Graph, vertexes, edges copy</li>
+  <li>Adding edges</li>
+  <li>Adding vertexes</li>
+  <li>Getting edge by vertexes</li>
+  <li>Vertex degrees</li>
+  <li>Graph transposing</li>
+  <li>Attributes: adding, deleting, getting, setting</li>
+</ul>
