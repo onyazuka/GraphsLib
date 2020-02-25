@@ -11,8 +11,8 @@ Small object-oriented library for graphs and some useful algorithms.
   <li>Cycle detection</li>
   <li>Undirected graph components split</li>
   <li>Directed graph strongly connected components split</li>
-  <li>Euler path finding</li>
-  <li>Euler circle finding</li>
+  <li>Eulerian path</li>
+  <li>Eulerian circuit</li>
   <li>Minimal spanning tree: Kruskal algorithm</li>
   <li>Minimal spanning tree: Prim algorithm</li>
   <li>Shortest path: shortest path in acyclic directed graphs</li>
@@ -23,7 +23,7 @@ Small object-oriented library for graphs and some useful algorithms.
 </ul>
 
 <h3>Complexities</h3>
-θ(V+E) - BFS, DFS, Topological Sort, Articulation points, Bridges, Cycle detection, Components, Euler, 
+θ(V+E) - BFS, DFS, Topological Sort, Articulation points, Bridges, Cycle detection, Components, Eulerian, 
   directed acyclic graph shortest path<br/>
 θ(ElgV) - Kruskal, Prim, Dijkstra<br/>
 θ(EV) - Bellman-Ford<br/>
@@ -32,12 +32,12 @@ Small object-oriented library for graphs and some useful algorithms.
 
 <h3>Features</h3>
 <ul>
-  <li>Adjacency lists or adjacency matrix</li>
+  <li>Graph inner structure: adjacency list or adjacency matrix</li>
   <li>Undirected and directed graphs</li>
-  <li>Graph, vertexes, edges copy</li>
-  <li>Adding edges</li>
-  <li>Adding vertexes</li>
-  <li>Getting edge by vertexes</li>
+  <li>Copying of graphs, vertices, edges</li>
+  <li>Adding of edges</li>
+  <li>Adding of vertices</li>
+  <li>Getting the edge by its vertices</li>
   <li>Vertex degrees</li>
   <li>Graph transposing</li>
   <li>Attributes: adding, deleting, getting, setting</li>
